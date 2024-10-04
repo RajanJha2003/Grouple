@@ -19,7 +19,7 @@ const Menu = ({orientation}:MenuProps) => {
     switch(orientation){
         case "desktop":
             return(
-                <Card className='bg-themeGray border-themeGray bg-clip-padding backdrop--blur__safari backdrop-filter backdrop-blur-2xl bg-opacity-60  p-1 lg:flex-hidden rounded-xl '>
+                <Card className='bg-themeGray border-themeGray bg-clip-padding backdrop--blur__safari backdrop-filter backdrop-blur-2xl bg-opacity-60  p-1 lg:flex hidden rounded-xl '>
                     <CardContent className='p-0 flex gap-2'>
                         {
                             GROUPLE_CONSTANTS.landingPageMenu.map((menuItem)=>(
@@ -48,7 +48,7 @@ const Menu = ({orientation}:MenuProps) => {
 
             )
 
-        case "desktop":
+        case "mobile":
                 return(
                     <div className="flex flex-col mt-10">
           {GROUPLE_CONSTANTS.landingPageMenu.map((menuItem) => (
