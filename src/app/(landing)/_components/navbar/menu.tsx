@@ -1,7 +1,9 @@
 "use client";
 
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import { GROUPLE_CONSTANTS } from '@/constants';
 import { useNavigation } from '@/hooks/navigation'
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -17,7 +19,14 @@ const Menu = ({orientation}:MenuProps) => {
         case 'desktop':
             return(
                 <Card className='bg-themeGray border-themeGray bg-clip-padding '>
-
+                    <CardContent>
+                        {
+                            GROUPLE_CONSTANTS.landingPageMenu.map((menuItem)=>(
+                                <Link  href={menuItem.path}>
+                                </Link>
+                            ))
+                        }
+                    </CardContent>
                 </Card>
             )
     }
