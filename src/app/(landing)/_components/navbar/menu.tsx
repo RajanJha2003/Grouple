@@ -16,7 +16,7 @@ const Menu = ({orientation}:MenuProps) => {
     switch(orientation){
         case 'desktop':
             return(
-                <Card className='bg-themeGray border-themeGray'>
+                <Card className='bg-themeGray border-themeGray bg-clip-padding '>
 
                 </Card>
             )
