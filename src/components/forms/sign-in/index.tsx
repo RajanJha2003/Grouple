@@ -4,14 +4,9 @@ import React from 'react'
 
 const SignInForm = () => {
   return (
-    <form className='flex flex-col gap-3 mt-10'>
-        {
-            GROUPLE_CONSTANTS.signInForm.map((field)=>(
-                <FormGenerator {...field} key={field.id}   />
-            ))
-        }
-
-    </form>
+   <form>
+    
+   </form>
   )
 }
 
