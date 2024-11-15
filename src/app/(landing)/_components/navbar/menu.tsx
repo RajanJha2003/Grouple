@@ -1,3 +1,7 @@
+"use client";
+
+import { Card } from '@/components/ui/card';
+import { useNavigation } from '@/hooks/navigation'
 import React from 'react'
 
 
@@ -7,9 +11,16 @@ type MenuProps={
 
 const Menu = ({orientation}:MenuProps) => {
   
-    return (
-    <div>Menu</div>
-  )
+    const {section,onSetSection}=useNavigation();
+   
+    switch(orientation){
+        case 'desktop':
+            return(
+                <Card className='bg-themeGray border-themeGray'>
+
+                </Card>
+            )
+    }
 }
 
 export default Menu
