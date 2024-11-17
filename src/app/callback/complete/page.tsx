@@ -1,14 +1,14 @@
-import { onSignUpUser } from '@/actions/auth';
-import { currentUser } from '@clerk/nextjs/server'
-import { redirect } from 'next/navigation';
-import React from 'react'
+import { onSignUpUser } from "@/actions/auth"
+import { currentUser } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation"
+import React from "react"
 
-const CompleteOAuthAfterCallback =async () => {
-    const user=await currentUser();
-    if(!user) redirect("/sign-in");
+const CompleteOAuthAfterCallback = async () => {
+    const user = await currentUser()
+    if (!user) redirect("/sign-in")
 
-    const complete=await onSignUpUser({
-        firstname:user.firstName as string,
+    const complete = await onSignUpUser({
+        firstname: user.firstName as string,
         lastname: user.lastName as string,
         image: user.imageUrl,
         clerkId: user.id,
@@ -16,12 +16,11 @@ const CompleteOAuthAfterCallback =async () => {
 
     if (complete.status == 200) {
         redirect(`/group/create`)
-      }
-    
-      if (complete.status !== 200) {
-        redirect("/sign-in")
-      }
+    }
 
+    if (complete.status !== 200) {
+        redirect("/sign-in")
+    }
 }
 
 export default CompleteOAuthAfterCallback

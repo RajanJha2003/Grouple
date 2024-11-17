@@ -26,20 +26,18 @@ export const onGetStripeClientSecret = async () => {
     }
 }
 
-
-export const onTransferCommission=async(destination:string)=>{
+export const onTransferCommission = async (destination: string) => {
     try {
-        const transfer=await stripe.transfers.create({
-            amount:3600,
-            currency:"inr",
-            destination:destination
+        const transfer = await stripe.transfers.create({
+            amount: 3600,
+            currency: "inr",
+            destination: destination,
         })
 
         if (transfer) {
             return { status: 200 }
-          }
+        }
     } catch (error) {
         return { status: 400 }
-        
     }
 }
