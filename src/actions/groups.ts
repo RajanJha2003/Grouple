@@ -204,3 +204,89 @@ export const onGetUserGroups=async(id:string)=>{
     }
 
 }
+
+export const ongetGroupChannels=async(groupid:string)=>{
+    try {
+        const channels=await client.channel.findMany({
+            where:{
+                groupId:groupid
+            },
+            orderBy:{
+                createdAt:"asc"
+            }
+        })
+
+        return {
+            status:200,
+            channels
+        }
+    } catch (error) {
+        return {
+            status:400,
+            message:"Something went wrong"
+        }
+        
+    }
+
+}
+
+
+export const onGetGroupSubscriptions=async(groupid:string)=>{
+    try {
+        const subscriptions=await client.subscription.findMany({
+            where:{
+                groupId:groupid
+            },
+            orderBy:{
+                createdAt:"desc"
+            }
+        })
+
+        const count=await client.members.count({
+            where:{
+                groupId:groupid
+            }
+        })
+
+        if(subscriptions){
+            return {
+                status:200,
+                subscriptions,
+                count
+            }
+        }
+    } catch (error) {
+        return {
+            status:400
+        }
+        
+    }
+}
+
+
+export const onGetAllGroupMembers=async(groupid:string)=>{
+        try {
+            const user=await onAuthenticatedUser();
+            const members=await client.members.findMany({
+                where:{
+                    groupId:groupid,
+                    NOT:{
+                        userId:user.id
+                    }
+                },
+                include:{
+                    User:true
+                }
+            })
+
+            if(members && members.length>0){
+                return {status:200,members}
+            }
+        } catch (error) {
+            return {
+                status:400,
+                message:"Something went wrong"
+            }
+            
+        }
+}
