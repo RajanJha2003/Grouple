@@ -19,7 +19,7 @@ type Props = {
 const GroupList = dynamic(
     () =>
       import("@/components/global/group-list-slider").then(
-        (component) => component.default,
+        (component) => component.GroupListSlider,
       ),
     {
       ssr: false,

@@ -1,26 +1,30 @@
-import React from 'react'
+"use client"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { GROUPLE_CONSTANTS } from "@/constants"
+import Link from "next/link"
+import { UseFormRegister } from "react-hook-form"
+import "swiper/css/bundle"
+import { SwiperProps, SwiperSlide } from "swiper/react"
+import  Slider from "../slider"
+import { GroupListItem } from "./list-item"
 
-import {UseFormRegister} from 'react-hook-form'
-import {SwiperProps,SwiperSlide} from 'swiper/react'
-import Slider from '../slider'
-import { GROUPLE_CONSTANTS } from '@/constants'
-import Link from 'next/link'
-import { GroupListItem } from './list-item'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-
-
-
-type Props={
-    overlay?:boolean
-    label?:string
-    register?:UseFormRegister<any>
-    selected?:string
-    route?:boolean
-
+type Props = {
+  overlay?: boolean
+  label?: string
+  register?: UseFormRegister<any>
+  selected?: string
+  route?: boolean
 } & SwiperProps
 
-const GroupListSlider = ({overlay,label,register,selected,route,...rest}:Props) => {
+export const GroupListSlider = ({
+  overlay,
+  label,
+  register,
+  selected,
+  route,
+  ...rest
+}: Props) => {
   return (
     <Slider
       slidesPerView={"auto"}
@@ -62,5 +66,3 @@ const GroupListSlider = ({overlay,label,register,selected,route,...rest}:Props) 
     </Slider>
   )
 }
-
-export default GroupListSlider
