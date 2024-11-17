@@ -104,4 +104,15 @@ export const usePayments = (
             }
         },
     })
+
+    const onCreateGroup = handleSubmit(async (values) => createGroup(values))
+
+    return {
+      onCreateGroup,
+      isPending,
+      register,
+      errors,
+      isCategory,
+      creatingIntent,
+    }
 }

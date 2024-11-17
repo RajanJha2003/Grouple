@@ -2160,6 +2160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/stripe-js@npm:^4.10.0":
+  version: 4.10.0
+  resolution: "@stripe/stripe-js@npm:4.10.0"
+  checksum: fe81e6d51d874a845d884160eaeac4164df5db8018b600cbac2012fe99041c80fae8691dd0aafd2b13ed68b3fa9e9f91b2427a32e942ae299e60b24772d955df
+  languageName: node
+  linkType: hard
+
 "@swc/counter@npm:^0.1.3":
   version: 0.1.3
   resolution: "@swc/counter@npm:0.1.3"
@@ -6914,6 +6921,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swiper@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "swiper@npm:11.1.14"
+  checksum: 87bf4c42d893c76d3545d42ad664b78b032f7768c99f3d90d8340c035d661e10e7805c3270df704f8da99508304e8ca87cab61d3c863586d9d231c9f718ae785
+  languageName: node
+  linkType: hard
+
 "swr@npm:^2.2.0":
   version: 2.2.5
   resolution: "swr@npm:2.2.5"
@@ -7450,6 +7464,7 @@ __metadata:
     "@radix-ui/react-tooltip": ^1.1.2
     "@reduxjs/toolkit": ^2.2.7
     "@stripe/react-stripe-js": ^2.9.0
+    "@stripe/stripe-js": ^4.10.0
     "@tanstack/react-query": ^5.51.24
     "@types/node": ^20
     "@types/react": ^18
@@ -7478,6 +7493,7 @@ __metadata:
     recharts: ^2.12.7
     sonner: ^1.5.0
     stripe: ^16.8.0
+    swiper: ^11.1.14
     tailwind-merge: ^2.5.2
     tailwindcss: ^3.4.1
     tailwindcss-animate: ^1.0.7
