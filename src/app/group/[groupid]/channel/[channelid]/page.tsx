@@ -1,6 +1,6 @@
 import { onGetChannelInfo } from '@/actions/channels';
 import { onGetGroupInfo } from '@/actions/groups';
-import { QueryClient } from '@tanstack/react-query'
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import React from 'react'
 
 type Props = {
@@ -25,9 +25,10 @@ const page = async({params}:Props) => {
 
 
   return (
-    <div>
+    <HydrationBoundary state={dehydrate(client)}>
+      
 
-    </div>
+    </HydrationBoundary>
   )
 }
 
