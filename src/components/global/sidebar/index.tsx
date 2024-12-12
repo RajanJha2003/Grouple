@@ -1,3 +1,6 @@
+"use client";
+
+import { useSideBar } from '@/hooks/navigation'
 import React from 'react'
 
 
@@ -48,6 +51,8 @@ type Props={
 }
 
 const SideBar = ({groupid,userid,mobile}:Props) => {
+
+  const {groupInfo, groups, mutate, variables, isPending, channels}=useSideBar(groupid);
   return (
     <div>SideBar</div>
   )
